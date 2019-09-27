@@ -34,3 +34,8 @@ Then('the contact submission form is displayed', function() {
     expect(form.isDisplayed()).to.be.true
     expect(form.isDisplayed()).to.eql(true)
 })
+
+Then('I fill in the contact form', function() {
+    browser.$('#et_pb_contact_name_1').addValue('Adetomi');
+    browser.pause(5000);
+})
