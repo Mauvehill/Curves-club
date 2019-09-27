@@ -2,7 +2,6 @@ import { Given, When, Then } from 'cucumber';
 
 Given('I visit the Curves club lingerie website', function() { 
     browser.url('https://www.curvesclublingerie.com/');
-    // browser.pause('5000');
 })
 
 When('I click Styles Solutions tab', function() {
@@ -10,7 +9,6 @@ When('I click Styles Solutions tab', function() {
     const styleSolutions = browser.$('#et-navigation li:nth-child(3) a');
     styleSolutions.waitForDisplayed();
     styleSolutions.click();
-    // browser.debug();
 })
 
 Then('the header title should be displayed', function() {
