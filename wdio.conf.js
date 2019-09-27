@@ -1,5 +1,7 @@
 const path = require('path');
 
+const debug = process.env.DEBUG;
+
 exports.config = {
     //
     // ==================
@@ -13,6 +15,7 @@ exports.config = {
     //
     specs: [
         './src/features/**/*.feature',
+        // './src/features/curves-club.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -148,6 +151,7 @@ exports.config = {
             './src/steps/given.js',
             './src/steps/then.js',
             './src/steps/when.js',
+            './src/steps/curves-club.js'
             // Or search a (sub)folder for JS files with a wildcard
             // works since version 1.1 of the wdio-cucumber-framework
             // './src/**/*.js',
@@ -163,7 +167,8 @@ exports.config = {
         // <boolean> add cucumber tags to feature or scenario name
         tagsInTitle: false,
         // <number> timeout for step definitions
-        timeout: 20000,
+        // timeout: timeout,
+        timeout: debug ? 90000000 : 90000
     },
 
     //
