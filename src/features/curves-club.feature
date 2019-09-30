@@ -11,6 +11,11 @@ Feature: Style solutions
    # Scenario: Check for Styles
    #  When I click Styles Solutions tab
    #  Then the header title should be displayed
+   
+   # TODO: Write script
+   #  Scenario: Check for Who We Serve
+   #  When I click Styles Solutions tab
+   #  Then the header title should be displayed
 
 
    Scenario: Contact form submission

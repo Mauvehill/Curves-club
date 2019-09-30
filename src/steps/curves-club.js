@@ -28,14 +28,29 @@ When('I click Book your bra fitting today', function() {
 
 }) 
 
-Then('the contact submission form is displayed', function() {
+When('the contact submission form is displayed', function() {
     const form = browser.$('#et_pb_contact_form_0');
     form.waitForDisplayed();
     expect(form.isDisplayed()).to.be.true
     expect(form.isDisplayed()).to.eql(true)
 })
 
-Then('I fill in the contact form', function() {
+When('I fill in the contact form', function() {
     browser.$('#et_pb_contact_name_1').addValue('Adetomi');
-    browser.pause(5000);
+    browser.$('[name="et_pb_contact_email_1"]').addValue('adetomi@hotmail.com');
+    browser.$('[data-original_id="preffered_date"]').addValue('28/10/2019');
+    browser.$('[data-original_id="phone_number"]').addValue('07947832579');
+    browser.$$('.et_pb_contact_field_checkbox label')[1].click();
+     
+    browser.$('#et_pb_contact_message_1').addValue('I need a re-fit');
+    browser.$('[type="submit"]').click();
+})
+
+Then('I should see submission confirmation message', function() {
+    const confirmationMessage = browser.$('.et-pb-contact-message');
+    confirmationMessage.waitForDisplayed();
+
+    expect(confirmationMessage.isDisplayed()).to.be.true
+    expect(confirmationMessage.getText()).to.equal('Thanks for contacting us');
+    // console.log('I am looking for this: ', confirmationMessage.isDisplayed());
 })
