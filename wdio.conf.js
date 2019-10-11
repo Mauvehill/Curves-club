@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 const debug = process.env.DEBUG;
 
@@ -14,7 +14,7 @@ exports.config = {
     // `wdio` will be called from there.
     //
     specs: [
-        './src/features/**/*.feature',
+        "./src/features/**/*.feature"
         // './src/features/curves-club.feature'
     ],
     // Patterns to exclude.
@@ -45,14 +45,16 @@ exports.config = {
     // out the Sauce Labs platform configurator - a great tool to configure your
     // capabilities: https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an
-        // in-house Selenium grid with only 5 firefox instance available you can
-        // make sure that not more than 5 instance gets started at a time.
-        maxInstances: 5,
-        //
-        browserName: 'chrome',
-    }],
+    capabilities: [
+        {
+            // maxInstances can get overwritten per capability. So if you have an
+            // in-house Selenium grid with only 5 firefox instance available you can
+            // make sure that not more than 5 instance gets started at a time.
+            maxInstances: 5,
+            //
+            browserName: "chrome"
+        }
+    ],
     //
     // ===================
     // Test Configurations
@@ -61,17 +63,17 @@ exports.config = {
     //
     // Level of logging verbosity: silent | verbose | command | data | result |
     // error
-    logLevel: 'trace',
+    logLevel: "trace",
     //
     // Enables colors for log output.
     coloredLogs: true,
     //
     // Saves a screenshot to a given path if a command fails.
-    screenshotPath: './errorShots/',
+    screenshotPath: "./errorShots/",
     //
     // Set a base URL in order to shorten getUrl command calls. If your getUrl
     // parameter starts with "/", then the base getUrl gets prepended.
-    baseUrl: 'http://localhost:8080',
+    baseUrl: "http://localhost:8080",
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -105,8 +107,8 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They
     // enhance your test setup with almost no effort. Unlike plugins, they don't
     // add new commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
-    outputDir: path.join(__dirname, 'logs'),
+    services: ["selenium-standalone"],
+    outputDir: path.join(__dirname, "logs"),
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -114,12 +116,12 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework
     // installed before running any tests.
-    framework: 'cucumber',
+    framework: "cucumber",
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['spec'],
+    reporters: ["spec"],
     //
     // If you are using Cucumber you need to specify the location of your step
     // definitions.
@@ -127,7 +129,7 @@ exports.config = {
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> module used for processing required features
-        requireModule: ['@babel/register'],
+        requireModule: ["@babel/register"],
         // <boolean< Treat ambiguous definitions as errors
         failAmbiguousDefinitions: true,
         // <boolean> invoke formatters without executing steps
@@ -148,10 +150,7 @@ exports.config = {
         profile: [],
         // <string[]> (file/dir) require files before executing features
         require: [
-            './src/steps/given.js',
-            './src/steps/then.js',
-            './src/steps/when.js',
-            './src/steps/curves-club.js'
+            "./src/steps/curves-club.js"
             // Or search a (sub)folder for JS files with a wildcard
             // works since version 1.1 of the wdio-cucumber-framework
             // './src/**/*.js',
@@ -163,7 +162,7 @@ exports.config = {
         // <string> (expression) only execute the features or scenarios with
         // tags matching the expression, see
         // https://docs.cucumber.io/tag-expressions/
-        tagExpression: 'not @Pending',
+        tagExpression: "not @Pending",
         // <boolean> add cucumber tags to feature or scenario name
         tagsInTitle: false,
         // <number> timeout for step definitions
@@ -192,12 +191,12 @@ exports.config = {
         /**
          * Setup the Chai assertion framework
          */
-        const chai = require('chai');
+        const chai = require("chai");
 
         global.expect = chai.expect;
         global.assert = chai.assert;
         global.should = chai.should();
-    },
+    }
     //
     // Hook that gets executed before the suite starts
     // beforeSuite: function beforeSuite(suite) {

@@ -1,9 +1,9 @@
 Feature: Style solutions
 
-   I want to check the style solutions page 
+   I want to check the style solutions page
 
    Background:
-    Given I visit the Curves club lingerie website
+      Given I visit the Curves club lingerie website
 
 #    Scenario: Check navigation links
 #     Then I should see 5 links
