@@ -37,6 +37,6 @@ Feature: Style solutions
 
 Scenario: I want to search for bras
 When I enter Bra in the search box 
-# Then search results for bra are returned
+Then search results for bra are displayed
 # And 4 results are returned
 

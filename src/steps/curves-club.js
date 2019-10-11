@@ -69,12 +69,15 @@ Given('I visit the Curves club lingerie website', function() {
 // })
 
 When('I enter Bra in the search box', function() {
-    const braSearch = browser.$('.et-search-field');
-    const bra = braSearch.getValue();
-    console.log('bra');
+    const searchField = browser.$('.et-search-field');
+    searchField.addValue('bra');
+
+    // const bra = braSearch.getValue();
+    // console.log(bra);
     browser.pause(5000);
 
-    browser.keys('Enter');
+    browser.$$('.et-search-submit')[0].click();
+    // browser.keys('Enter');
 
 })
 
