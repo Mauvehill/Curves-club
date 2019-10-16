@@ -74,10 +74,19 @@ When('I enter Bra in the search box', function() {
 
     // const bra = braSearch.getValue();
     // console.log(bra);
-    browser.pause(5000);
+    // browser.pause(5000);
 
     browser.$$('.et-search-submit')[0].click();
-    // browser.keys('Enter');
-
 })
 
+Then('Then search results for bra are displayed', function() {
+    const searchResult = browser.$$('h1');
+    expect(searchResult.getText()).to.equal('Bra Results');
+})
+
+Then('4 results for bras are returned', function() {
+    const results = browser.$$('.et_pb_extra_column_main');
+    expect(results.isDisplayed()).to.be.true
+    expect(results).to.have.lengthOf(4);
+    console.log('check type of results', typeof(results.length));
+})
