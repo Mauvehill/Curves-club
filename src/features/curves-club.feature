@@ -5,49 +5,43 @@ Feature: Style solutions
    Background:
       Given I visit the Curves club lingerie website
 
-#    Scenario: Check navigation links
-#     Then I should see 5 links
-      
-#    Scenario: Check for Styles
-#     When I click Styles Solutions tab
-#     Then the header title should be displayed
-   
-#     Scenario: Check for Who We Serve
-#     When I click Who We Serve tab
-#     Then the header title is displayed
+   # Scenario: Check navigation links
+   #    Then I should see 5 links
 
-#    Scenario: Contact form submission
-#     When I click Book your bra fitting today
-#     And the contact submission form is displayed 
-#     And I fill in the contact form
-#     Then I should see submission confirmation message
+   Scenario: Check for Styles
+      # Notes:
+      # var string = whatever double quotes in the steps
+      # var string = 'Styles Solutions' in the steps
+      # var int = '3' in the steps
+      When I click 'Styles Solutions' tab - 3
+      Then the header title should be displayed
 
-#   ASSIGNMENT: Carry out search
-#   1. Merge you pull-request on-line on github (that I have approved)
-#   2. Git cheocout Master & Pull the latest of Master
-#   3. Create a new branch, don't use this one again
-#   4. Go to the search bar on top navigation menu and search for 'Bra'
-#   5. Confirm that the search results page is displayed
-#   6. Confirm that the number of results displayed
+   # Scenario: Check for Who We Serve
+   # ***ASSIGNMENT:***
+   # parametirize the step below to be the same as above to use the same step.
+   # Remove old step
+   #    When I click Who We Serve tab
+   #    Then the header title is displayed
 
-#   ASSIGNMENT: Fill in another form
-#   1. Scroll to the header "LET’S STAY IN TOUCH!" or "DROP US A MESSAGE"
-#   2. Fill in the e-mail form to subscribe
-#   3. Form submission gives an error.
+   # Scenario: Contact form submission
+   #    When I click Book your bra fitting today
+   #    And the contact submission form is displayed
+   #    And I fill in the contact form
+   #    Then I should see submission confirmation message
 
-Scenario: I want to search for bras
-When I enter Bra in the search box 
-Then search results for bra are displayed
-And 4 results for bras are returned
+   Scenario: I want to search for bras
+   When I enter Bra in the search box 
+   Then search results for bra are displayed
+   And 4 results for bras are returned
 
-Scenario Outline: I want to search for bra types
-When I enter Bra types in the search box <bra type>
-Examples:
-| bra type | 
-| Eleanor  | 
-| Fantasie |
-| Freya active |
+   Scenario Outline: I want to search for bra types
+   When I enter Bra types in the search box <bra type>
+   Examples:
+   | bra type | 
+   | Eleanor  | 
+   | Fantasie |
+   | Freya active |
 
 
-Then search results for bra are displayed
-And 4 results for bras are returned
+   Then search results for bra are displayed
+   And 4 results for bras are returned
