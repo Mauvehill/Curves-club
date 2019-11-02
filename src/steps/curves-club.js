@@ -124,15 +124,14 @@ When("I fill in the contact form", function() {
 //     console.log('I am looking for this: ', confirmationMessage.isDisplayed());
 // })
 
+// When('I enter Bra in the search box', function() {
+//     const searchField = browser.$('.et-search-field');
+//     searchField.addValue('bra');
+//     browser.$$('.et-search-submit')[0].click();
+// })
+
 When('I enter Bra in the search box', function() {
-    const searchField = browser.$('.et-search-field');
-    searchField.addValue('bra');
-
-    // const bra = braSearch.getValue();
-    // console.log(bra);
-    // browser.pause(5000);
-
-    browser.$$('.et-search-submit')[0].click();
+    console.log('hello');
 })
 
 Then('Then search results for bra are displayed', function() {

@@ -30,18 +30,18 @@ Feature: Style solutions
    #    Then I should see submission confirmation message
 
    Scenario: I want to search for bras
-   When I enter Bra in the search box 
-   Then search results for bra are displayed
-   And 4 results for bras are returned
+      When I enter Bra in the search box 
+      # Then search results for bra are displayed
+      # And 4 results for bras are returned
 
-   Scenario Outline: I want to search for bra types
-   When I enter Bra types in the search box <bra type>
-   Examples:
-   | bra type | 
-   | Eleanor  | 
-   | Fantasie |
-   | Freya active |
+   # Scenario Outline: I want to search for bra types
+   # When I enter Bra types in the search box <bra type>
+   # Examples:
+   # | bra type | 
+   # | Eleanor  | 
+   # | Fantasie |
+   # | Freya active |
 
 
-   Then search results for bra are displayed
-   And 4 results for bras are returned
+   # Then search results for bra are displayed
+   # And 4 results for bras are returned
