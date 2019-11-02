@@ -16,16 +16,32 @@ Feature: Style solutions
       When I click 'Styles Solutions' tab - 3
       Then the header title should be displayed
 
-# Scenario: Check for Who We Serve
-# ***ASSIGNMENT:***
-# parametirize the step below to be the same as above to use the same step.
-# Remove old step
-#    When I click Who We Serve tab
-#    Then the header title is displayed
+   # Scenario: Check for Who We Serve
+   # ***ASSIGNMENT:***
+   # parametirize the step below to be the same as above to use the same step.
+   # Remove old step
+   #    When I click Who We Serve tab
+   #    Then the header title is displayed
 
-# Scenario: Contact form submission
-#    When I click Book your bra fitting today
-#    And the contact submission form is displayed
-#    And I fill in the contact form
-#    Then I should see submission confirmation message
+   # Scenario: Contact form submission
+   #    When I click Book your bra fitting today
+   #    And the contact submission form is displayed
+   #    And I fill in the contact form
+   #    Then I should see submission confirmation message
 
+   Scenario: I want to search for bras
+      When I enter Bra in the search box 
+      # Then search results for bra are displayed
+      # And 4 results for bras are returned
+
+   # Scenario Outline: I want to search for bra types
+   # When I enter Bra types in the search box <bra type>
+   # Examples:
+   # | bra type | 
+   # | Eleanor  | 
+   # | Fantasie |
+   # | Freya active |
+
+
+   # Then search results for bra are displayed
+   # And 4 results for bras are returned
