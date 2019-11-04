@@ -10,28 +10,19 @@ When("I click {string} tab - {int}", function(string, int) {
     const link = browser.$(`#et-navigation li:nth-child(${int}) a`);
     link.waitForDisplayed();
     link.click();
-    browser.pause(5000);
 });
 
-// When("I click Styles Solutions tab", function() {
-//     console.log("click step");
-//     const styleSolutionsLink = browser.$("#et-navigation li:nth-child(3) a");
-//     styleSolutionsLink.waitForDisplayed();
-//     styleSolutionsLink.click();
-// });
+Then("the {string} for the corresponding tab {int} should be displayed", function(headerTitle, tabNumber) {
+    // Notes: Debugging
+    // console.log('what type is tabNumber: ', typeof tabNumber);
+    // console.log('header index is: ', headerIndex);
 
-When("I click Who We Serve tab", function() {
-    const whoWeServeLink = browser.$("#et-navigation li:nth-child(2) a");
-    whoWeServeLink.waitForDisplayed();
-    whoWeServeLink.click();
-});
+    const header = browser.$$("h2")[tabNumber];
+    const headerText = header.getText().toLowerCase();
 
-Then("the header title should be displayed", function() {
-    const styleSolutionsHeader = browser.$$("h2")[3];
-    expect(styleSolutionsHeader.getText()).to.equal(
-        "OUR STYLE SOLUTIONS FOR THE CURVY WOMAN"
-    );
-    expect(styleSolutionsHeader.getText()).to.include("OUR STYLE SOLUTIONS");
+    header.waitForDisplayed();
+
+    expect(headerText).to.include(headerTitle);
 });
 
 Then("I should see 5 links", function() {
