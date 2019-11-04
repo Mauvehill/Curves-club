@@ -18,7 +18,7 @@ Then("the {string} for the corresponding tab {int} should be displayed", functio
     // console.log('header index is: ', headerIndex);
 
     const header = browser.$$("h2")[tabNumber];
-    const headerText = header.getText();
+    const headerText = header.getText().toLowerCase();
 
     header.waitForDisplayed();
 

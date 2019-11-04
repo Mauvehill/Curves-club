@@ -21,10 +21,11 @@ Feature: Style solutions
       Then the <headerTitle> for the corresponding tab <tabNumber> should be displayed
 
       Examples:
-         | tabs    | tabNumber | headerTitle |
-         | 'About' | 1         | 'ABOUT'     |
-         # | 'Who we serve'     | 2         |
-         # | 'Styles Solutions' | 3         |
+         | tabs           | tabNumber | headerTitle    |
+         | 'About'        | 1         | 'about'        |
+         | 'Who we serve' | 2         | 'fuller woman' |
+# | 'Who we serve'     | 2         |
+# | 'Styles Solutions' | 3         |
 
 
 # Scenario: Contact form submission
